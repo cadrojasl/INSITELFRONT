@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-
+//component del footer
 @Component({
     selector: 'app-footer',
     templateUrl: './footer.component.html',

@@ -20,7 +20,7 @@ export class FormularioComponent implements OnInit {
       monitoreos => this.monitoreos = monitoreos
     );
   }
-
+  //accion del boton eliminar
   delete(cordenada: Monitoreo): void {
     swal({
       title: 'Está seguro?',

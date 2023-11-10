@@ -16,12 +16,14 @@ export class MapaComponent {
 
   }
   ngOnInit() {
+    //inicializa la ubicación actual
     setTimeout(() => {
       console.log(this.mapService.useLocation)
       this.geo = this.mapService.useLocation;
     }, 2000);
 
   }
+  //inicializa el mapa luego de init
   ngAfterViewInit() {
 
     const myIcon= icon({
@@ -29,7 +31,7 @@ export class MapaComponent {
       iconSize: [25, 41]
     })
 
-    
+    //mapa importado
     setTimeout(() => {
       this.map = new Map('map').setView(this.geo, 13);
       tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -48,12 +50,13 @@ export class MapaComponent {
             color = 'green'; // Temperatura entre 13°C y 16°C - Verde
           }
           marker(this.geo,{icon:myIcon}).addTo(this.map).bindPopup("<b>Ubicación actual</b>").openPopup();
-          // Crear marcador con el color correspondiente
+        
+          //iconos
           const customMarker = marker([punto.longitud, punto.latitud], {
             icon: icon({
               iconSize: [25, 41],
               iconAnchor: [13, 41],
-              iconUrl: `assets/leaf-${color}.png`, // Asegúrate de tener imágenes de marcadores en los colores necesarios
+              iconUrl: `assets/leaf-${color}.png`, 
               shadowUrl: 'assets/leaf-shadow.png',
               shadowSize: [25, 41],
               shadowAnchor:[13, 41]

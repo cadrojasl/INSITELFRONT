@@ -21,7 +21,7 @@ private activatedRoute: ActivatedRoute) { }
   ngOnInit() {
     this.cargarCordenada()
   }
-
+//funcion para traer la cordenada por id
   cargarCordenada(): void{
     this.activatedRoute.params.subscribe(params => {
       let id = params['id']
@@ -30,7 +30,7 @@ private activatedRoute: ActivatedRoute) { }
       }
     })
   }
-
+//funcion para crear la cordenada 
   create(): void {
     if (this.monitor.nombre.trim() === "" || this.monitor.latitud === 0 || this.monitor.longitud === 0 ) {
 
@@ -44,7 +44,7 @@ private activatedRoute: ActivatedRoute) { }
       }
       );
   }
-
+//funcion para actualizar la cordenada
   update():void{
 
     if (this.monitor.nombre.trim() === "" || this.monitor.latitud === 0 ||this.monitor.longitud === 0 ) {

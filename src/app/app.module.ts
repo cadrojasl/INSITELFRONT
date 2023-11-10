@@ -15,7 +15,7 @@ import { FormComponent } from './formulario/form.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
-
+//rutas
 const routes: Routes=[
   {path:'',redirectTo: '/monitoreo', pathMatch:'full'},
   {path:'monitoreo', component: MapaComponent},
@@ -23,7 +23,7 @@ const routes: Routes=[
   {path:'formulario/form',component:FormComponent},
   {path:'formulario/form/:id',component:FormComponent}
 ]
-
+//componentes e importaciones
 @NgModule({
   declarations: [
     AppComponent,
