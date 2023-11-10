@@ -8,7 +8,7 @@ import { Monitoreo } from '../models/monitoreo.model';
   providedIn: 'root'
 })
 export class MonitoreoService {
-  private apiUrl = 'http://localhost:8080/api/monitoreo';
+  private apiUrl = 'https://shippoback.azurewebsites.net/api/monitoreo';
 
   constructor(private http: HttpClient) {
     this.getUserLocation();
