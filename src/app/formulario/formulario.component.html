@@ -1,0 +1,45 @@
+<div class="card border-primary mb-3" style="max-height: calc(100vh - 200px); overflow-y: auto;">
+  <div class="card-body text-secondary-emphasis">
+    <h5 class="card-title text-center">Listado de coordenadas</h5>
+
+    <div class="my-2 text-left">
+      <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/formulario/form']">
+        Crear cordenada
+      </button>
+    </div>
+
+    <div class="text-center"> <!-- Agrega la clase text-center aquí -->
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>nombre</th>
+            <th>longitud</th>
+            <th>latitud</th>
+            <th>temperatura</th>
+            <th>editar</th>
+            <th>eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let listado of monitoreos | paginate: { itemsPerPage: 10, currentPage: p }">
+            <td>{{ listado.id }}</td>
+            <td>{{ listado.nombre }}</td>
+            <td>{{ listado.longitud }}</td>
+            <td>{{ listado.latitud }}</td>
+            <td>{{ listado.temperatura }}</td>
+            <td>
+              <button type="button" name="editar" [routerLink]="['/formulario/form', listado.id]"
+                class="btn btn-primary btn-sm">editar</button>
+            </td>
+            <td>
+              <button type="button" name="eliminar" (click)='delete(listado)' class="btn btn-danger btn-sm">eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+  </div>
+</div>
